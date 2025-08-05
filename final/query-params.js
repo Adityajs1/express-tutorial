@@ -5,7 +5,6 @@ const { products } = require('./data')
 app.get('/', (req, res)=>{
     res.json('<h1> My name is Aditya <a href = "/api/products">products</a>')
 })
-
 app.get ('/api/products', (req, res)=>{
    const newProducts = products.map((products)=>{
     const {id, name , image} = products;
@@ -13,7 +12,6 @@ app.get ('/api/products', (req, res)=>{
    })
    res.json(newProducts)
 })
-
 // :productId id route param used for customised id's for a large data
 app.get('/api/products/:productId',(req, res)=>{
     const {productId} = req.params
@@ -44,9 +42,6 @@ app.get('/api/v1/query', (req, res)=>{
     res.status(200).json(sortedProducts)  
     }
 })
-
-
 app.listen(5000, ()=>{
     console.log("Server is running on the port...");
-    
 })
